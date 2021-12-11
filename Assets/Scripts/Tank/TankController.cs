@@ -7,6 +7,7 @@ using UnityEngine.InputSystem;
 public class TankController : MonoBehaviour
 {
     public float mSpeed;
+    public float mRotationAngle;
 
     private PlayerInput mPlayerInput;
     private Vector2 mMovement;
@@ -17,7 +18,11 @@ public class TankController : MonoBehaviour
     }
     private void Update()
     {
-        transform.position += new Vector3(mMovement.x, 0f, mMovement.y) * Time.deltaTime * mSpeed;
+        // Move Forward/Backward
+        transform.position += transform.forward * mMovement.y * Time.deltaTime * mSpeed;
+
+        // Rotate
+        transform.Rotate(Vector3.up, mRotationAngle * mMovement.x * Time.deltaTime);
     }
 
     public void OnMovement(InputAction.CallbackContext value)
