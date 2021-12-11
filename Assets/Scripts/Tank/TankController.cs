@@ -8,6 +8,8 @@ public class TankController : MonoBehaviour
 {
     public float mSpeed;
     public float mRotationAngle;
+    public float mShootingRange = 100f;
+    public Transform mShootingPoint;
 
     private PlayerInput mPlayerInput;
     private Vector2 mMovement;
@@ -33,7 +35,20 @@ public class TankController : MonoBehaviour
 
     public void OnFire(InputAction.CallbackContext value)
     {
+        Shoot();
+    }
 
+    private void Shoot()
+    {
+        if (Debug.isDebugBuild)
+        {
+            Debug.DrawRay(mShootingPoint.position, mShootingPoint.forward * mShootingRange, Color.red, 0.5f);
+        }
+        
+        if (Physics.Raycast(mShootingPoint.position, mShootingPoint.forward, out RaycastHit hit, mShootingRange))
+        {
+            Debug.Log("Dio en algo");
+        }
     }
 
 }

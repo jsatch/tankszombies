@@ -583,6 +583,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mSpeed: 5
   mRotationAngle: 30
+  mShootingRange: 50
+  mShootingPoint: {fileID: 417396169}
 --- !u!114 &1419470589
 MonoBehaviour:
   m_ObjectHideFlags: 0
