@@ -14,9 +14,12 @@ public class TankController : MonoBehaviour
     private PlayerInput mPlayerInput;
     private Vector2 mMovement;
 
+    private ParticleSystem mShootingPS;
+
     private void Awake()
     {
         mPlayerInput = GetComponent<PlayerInput>();
+        mShootingPS = mShootingPoint.Find("MuzzleFlash").GetComponent<ParticleSystem>();
     }
     private void Update()
     {
@@ -40,6 +43,7 @@ public class TankController : MonoBehaviour
 
     private void Shoot()
     {
+        mShootingPS.Play();
         if (Debug.isDebugBuild)
         {
             Debug.DrawRay(mShootingPoint.position, mShootingPoint.forward * mShootingRange, Color.red, 0.5f);
