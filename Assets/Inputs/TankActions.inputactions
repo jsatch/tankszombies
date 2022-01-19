@@ -20,6 +20,14 @@
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": ""
+                },
+                {
+                    "name": "TurretRotation",
+                    "type": "Value",
+                    "id": "5ad96ad9-2681-4a2a-a646-af2afdcb8d25",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": ""
                 }
             ],
             "bindings": [
@@ -88,6 +96,17 @@
                     "action": "Movement",
                     "isComposite": false,
                     "isPartOfComposite": true
+                },
+                {
+                    "name": "",
+                    "id": "5053e58f-45ec-4400-b181-87baa0317104",
+                    "path": "<Mouse>/position",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "TurretRotation",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         }
